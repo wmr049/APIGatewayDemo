@@ -1,11 +1,18 @@
 {
-    "ReRoutes": [{
+    "ReRoutes": [
+        {
             "DownstreamPathTemplate": "/api/customers",
             "DownstreamScheme": "http",
             "DownstreamHost": "localhost",
             "DownstreamPort": 9001,
             "UpstreamPathTemplate": "/customers",
-            "UpstreamHttpMethod": ["Get"]
+            "UpstreamHttpMethod": [
+                "Get"
+            ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "TestKey",
+                "AllowedScopes": []
+            }
         },
         {
             "DownstreamPathTemplate": "/api/customers/{id}",
@@ -13,15 +20,19 @@
             "DownstreamHost": "localhost",
             "DownstreamPort": 9001,
             "UpstreamPathTemplate": "/customers/{id}",
-            "UpstreamHttpMethod": ["Get"]
+            "UpstreamHttpMethod": [
+                "Get"
+            ]
         },
         {
-            "DownstreamPathTemplate": "/api/products",
+            "DownstreamPathTemplate": "/api/auth",
             "DownstreamScheme": "http",
-            "DownstreamPort": 9002,
             "DownstreamHost": "localhost",
-            "UpstreamPathTemplate": "/api/products",
-            "UpstreamHttpMethod": ["Get"]
+            "DownstreamPort": 9009,
+            "UpstreamPathTemplate": "/api/auth",
+            "UpstreamHttpMethod": [
+                "Get"
+            ]
         }
     ],
     "GlobalConfiguration": {
