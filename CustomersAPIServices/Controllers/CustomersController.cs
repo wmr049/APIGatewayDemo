@@ -12,9 +12,13 @@ namespace CustomersAPIServices.Controllers
     {
         [Authorize]
         [HttpGet]
-        public IEnumerable<string> Get() => new string[] { "Catcher Wong", "James Li" };
+        public IEnumerable<string> Get() {
+            return new string[] { "Catcher Wong", "James Li" };
+        }
 
         [HttpGet("{id}")]
-        public string Get(int id) => $"Catcher Wong - {id}";
+        public string Get (int id){
+            return $"Catcher Wong - {id}";
+        }
     }
 }
